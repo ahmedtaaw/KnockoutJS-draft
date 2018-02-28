@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <script type = 'text/javascript' src = 'js/jquery.min.js'></script>
+        <script type = 'text/javascript' src = 'js/knockout-3.4.2.js'></script>
+
+    <b>Filters:</b><br />
+    <div data-bind="foreach: filter.filters">
+        <div>
+            <span data-bind="text: Name"></span>:<br />
+        </div>
+        <div data-bind="if: Type == 'select'">
+            <select data-bind="options: Options, optionsText: 'Name', value: CurrentOption"></select>
+        </div>
+        <div data-bind="if: Type == 'text'">
+            <input type="text" data-bind="value: Value, valueUpdate: 'afterkeydown'" />
+        </div>
+    </div>
+    <br />
+    <b>Sorts:</b>
+    Field:<br />
+    <select data-bind="options: sorter.sortOptions, optionsText: 'Name', value: sorter.currentSortOption"></select>
+    Direction:
+    <select data-bind="options: sorter.sortDirections, optionsText: 'Name', value: sorter.currentSortDirection"></select>
+    <br />
+    <br />
+    
+    <div class="Pager"></div>
+    <div class="NoRecords"></div>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    ID
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Status
+                </th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: pager.currentPageRecords">
+            <tr>
+                <td>
+                    <span data-bind="text: id"></span>
+                </td>
+                <td>
+                    <span data-bind="text: name"></span>
+                </td>
+                <td>
+                    <span data-bind="text: status"></span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+   
+    <script type = 'text/javascript' src = 'js/filter.js'></script>
+
+</body>
+</html>
