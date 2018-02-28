@@ -9,15 +9,12 @@
 <body>
     <script type = 'text/javascript' src = 'js/knockout-3.4.2.js'></script>
 
-    
-    <p>First String: <input data-bind = "value: firstString" /></p>
-    <p>Second String: <input data-bind = "value: secondString" /></p>
+  
+    <p>Enter your name: <input data-bind = "value: yourName,valueUpdate: 'afterkeydown'" /></p>
+    <p>Hi <strong data-bind = "text: yourName"></strong> Good Morning!!!</p>
 
-    <p>First String: <strong data-bind = "text: firstString">Hi</strong></p>
-    <p>Second String: <strong data-bind = "text: secondString">There</strong></p>
-
-    <p>Derived String: <strong data-bind = "text: thirdString"></strong></p>
-
+    <textarea data-bind="value:yourHTML" cols="30" rows="10"></textarea>
+    <div data-bind="html:yourHTML"></div>
     <script type = 'text/javascript' src = 'js/app.js'></script>
 
 </body>
