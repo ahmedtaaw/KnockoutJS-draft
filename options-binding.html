@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script type = 'text/javascript' src = 'js/knockout-3.4.2.js'></script>
+
+  
+   
+<p>
+        Your country:
+        <select data-bind="options: availableCountries,
+                           optionsText: 'countryName',
+                           value: selectedCountry,
+                           optionsCaption: 'Choose...'"></select>
+    </p>
+
+    <div data-bind="visible: selectedCountry"> 
+        You have chosen a country with population
+        <span data-bind="text: selectedCountry() ? selectedCountry().countryPopulation : 'unknown'"></span>.
+    </div>
+
+
+    <script type = 'text/javascript' src = 'js/app.js'></script>
+
+</body>
+</html>
