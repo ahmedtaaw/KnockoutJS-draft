@@ -41,6 +41,7 @@ var AddressBook = function () {
     return {
         /* add members that will be exposed publicly */
         contact: contact,
-        addContact: addContact
+        addContact: addContact,
+        contacts:contacts
     };
 }();
