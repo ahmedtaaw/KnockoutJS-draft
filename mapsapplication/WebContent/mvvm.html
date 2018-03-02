@@ -19,15 +19,19 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <p>Name
-                    <input type="text" data-bind="value: AddressBook.contact.name" />
+                <div class="form-group">
+                    <label>Name</label>
+                    <input class="form-control" type="text" data-bind="value: AddressBook.contact.name" />
                 </p>
-                <p>Phone Number
-                    <input type="text" data-bind="value: AddressBook.
+                <div class="form-group">
+                        <label>Phone Number</label>
+                    <input class="form-control" type="text" data-bind="value: AddressBook.
                         contact.phoneNumber" />
-                </p>
-                <p><button data-bind="click:
-                    AddressBook.addContact">Add</button></p>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-default" data-bind="click:
+                    AddressBook.addContact">Add</button>
+                    </div>
             </div>
         </div>
         <div class="row">
