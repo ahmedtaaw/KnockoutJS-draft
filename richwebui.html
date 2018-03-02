@@ -7,9 +7,42 @@
     <title>rich web ui</title>
 </head>
 <body>
-    
+    <script type = 'text/javascript' src = 'js/jquery.min.js'></script>
     <script type = 'text/javascript' src = 'js/knockout-3.4.2.js'></script>
     <script type = 'text/javascript' src = 'js/knockout-es5.min.js'></script>
+
+    <h1>Checkout</h1>
+
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <td>Product</td>
+                    <td>Quantity</td>
+                    <td>Subtotal</td>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach:lines">
+                <tr>
+                    <td>
+                        <select data-bind="
+                        options: MyApp.AllProducts,
+                        OptionsText:'name',
+                        optionsCaption:'Choose...',
+                        value:product">
+                            
+                        </select>
+                    </td>
+                    <td>
+                        <input type="number" min="0" data-bind="value:quantity">
+                    </td>
+                    <td data-bind="text: subtotal">
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
     <script type = 'text/javascript' src = 'js/richwebui.js'></script>
 

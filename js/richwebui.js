@@ -6,36 +6,37 @@ function OrderLine(){
     this.quantity = 2;
 
     ko.defineProperty(this,'subtotal',function(){
-        console.log('Evaluating Subtotal');
         return this.product ? this.product.price * this.quantity :0;
     });
 
-    this.taxRate=1.25;
 
-    ko.defineProperty(this, 'subtotalAfterTax', function(){
-        console.log('Evaluating subtotal after tax');
-        return this.subtotal*this.taxRate;
-    })
-/*
-var line = new OrderLine()
-undefined
-line.subtotalAfterTax
-richwebui.js:16 Evaluating subtotal after tax
-richwebui.js:9 Evaluating Subtotal
-737.5
-line.subtotalAfterTax
-737.5
-line.subtotalAfterTax
-737.5
-line.subtotalAfterTax
-737.5
-line.quantity=5
-richwebui.js:9 Evaluating Subtotal
-richwebui.js:16 Evaluating subtotal after tax
-5
-line.taxRate=324.5
-richwebui.js:16 Evaluating subtotal after tax
-324.5
-*/
     ko.track(this);
 }
+
+//modeling a Collection of these order lines
+
+function AppViewModel(){
+    //hard coded 2 order lines
+    this.lines = [new OrderLine(), new OrderLine(), new OrderLine()],
+  
+    this.AllProducts = [{
+        name:'asd1 print',
+        price: 1295.00
+    },{
+        name:'asd2 print',
+        price: 2295.00
+    },{
+        name:'asd3 print',
+        price: 3295.00
+    }];
+
+
+    ko.track(this);
+}
+
+$(function(){
+    //when the application starts
+    //bind an instance of AppViewModel
+    MyApp = new AppViewModel();
+    ko.applyBindings(MyApp);
+});
