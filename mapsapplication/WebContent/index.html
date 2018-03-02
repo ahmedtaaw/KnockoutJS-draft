@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html" />
+    <title>Knockout : Maps Application</title>
+
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/knockout-3.4.2.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" 
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhHOx6xieDMoLhIpTEF1R26ldB9F6Hrcc&libraries=places">
+    </script>
+    <script type="text/javascript" src="js/mapsapplication.js"></script>
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Address</div>
+                    <div class="panel-body">
+                        <div id="addressFromFields" class="form-group">
+                            <label for="autocompleteFromAddress">From address</label>
+                            <input id="autocompleteFromAddress" class="form-control" data-bind="addressAutoComplete:
+                            MapsApplication.mapsModel.fromAddress" placeholder="Enter
+                            your from address" type="text"></input>
+                        </div>
+                        <div id="addressToFields" class="form-group">
+                            <label for="autocompleteToAddress">To address</label>
+                            <input id="autocompleteToAddress" class="form-control" data-bind="addressAutoComplete:
+                            MapsApplication.mapsModel.toAddress" placeholder="Enter your
+                            to address" type="text"></input>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
